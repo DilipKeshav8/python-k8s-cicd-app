@@ -25,11 +25,11 @@ pipeline {
             }
         }
         stage('Deploy to Kubernetes') {
-            steps {
-                sh '''
-                    sed -i "s|image:.*|image: $DOCKER_IMAGE|g" deployment.yaml
-                    kubectl apply -f deployment.yaml
-                    kubectl apply -f service.yaml
+    steps {
+        sh '''
+            sed -i "s|image:.*|image: $DOCKER_IMAGE|g" kubernetes/deployment.yaml
+            kubectl apply -f kubernetes/deployment.yaml
+            kubectl apply -f kubernetes/service.yaml
                 '''
             }
         }
