@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-k8s-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-k8s
+  template:
+    metadata:
+      labels:
+        app: python-k8s
+    spec:
+      containers:
+      - name: python-k8s
+        image: dilipkeshav8/python-k8s-app:v1
+        ports:
+        - containerPort: 5000
