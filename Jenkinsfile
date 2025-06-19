@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+  agent { label 'python-k8s-agent' }
 
     environment {
         KUBECONFIG = "/root/.kube/config"
