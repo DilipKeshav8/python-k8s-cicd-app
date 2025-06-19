@@ -1,6 +1,7 @@
 pipeline {
     agent any
     environment {
+        KUBECONFIG = "/root/.kube/config"
         DOCKER_IMAGE = "dilipkeshav8/python-k8s-app:${BUILD_NUMBER}"
     }
     stages {
