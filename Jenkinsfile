@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/DilipKeshav8/python-k8s-cicd-app.git'
+                git branch: 'main', url: 'https://github.com/DilipKeshav8/python-k8s-cicd-app.git'
             }
         }
         stage('Build Docker Image') {
